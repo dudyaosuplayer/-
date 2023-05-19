@@ -1,3 +1,11 @@
+function clearForm() {
+  document.getElementById("comment").value = "";
+  document.getElementById('quantity').value = "";
+  document.getElementById('option1').checked = false;
+  document.getElementById('option2').checked = false;
+  document.getElementById('option2').checked = false;
+}
+
 // Функция, отображающая кнопку скролла наверх при скроле
 function toggleScrollTopBtn() {
   const scrollTopBtn = document.getElementById('scrollToTopBtn');
@@ -72,7 +80,6 @@ const closeBtnForm = document.getElementById('closeButton');
 buyBtns.forEach(function(buyBtn) {
   buyBtn.addEventListener('click', function() { 
     overlay.classList.add('show');
-
   });
 });
 
@@ -80,6 +87,7 @@ buyBtnForm.addEventListener('click', () => {alert('Покупка соверше
 
 closeBtnForm.addEventListener('click', () => {
    overlay.classList.remove('show');
+   clearForm();
 })
 
 const form = document.getElementById('purchaseForm');

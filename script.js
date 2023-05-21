@@ -10,7 +10,7 @@ function clearForm() {
 function toggleScrollTopBtn() {
   const scrollTopBtn = document.getElementById('scrollToTopBtn');
 
-  if(document.documentElement.scrollTop > 20) {
+  if (document.documentElement.scrollTop > 20) {
     scrollTopBtn.style.display = "block";
   } else {
     scrollTopBtn.style.display = "none";
@@ -43,19 +43,19 @@ function getDayInfo(str) {
   let splitRes = result.split(',')
 
 
-  return `${capitalizeFirstLetter(splitRes[0])}, ${week} неделя ${capitalizeFirstLetter(splitRes[1].trim().split(' ')[1])} ${year} года`; 
+  return `${capitalizeFirstLetter(splitRes[0])}, ${week} неделя ${capitalizeFirstLetter(splitRes[1].trim().split(' ')[1])} ${year} года`;
 
 }
 
 // Удаление # из url
-window.addEventListener('DOMContentLoaded', function() {
+window.addEventListener('DOMContentLoaded', function () {
   if (window.location.hash) {
     history.replaceState(null, null, window.location.href.split('#')[0]);
   }
 });
 
 // Вызов функции toggleScrollTopBtn() при событии скролла
-window.onscroll = function() {
+window.onscroll = function () {
   toggleScrollTopBtn();
 }
 
@@ -77,17 +77,17 @@ const buyBtnForm = document.getElementById('buyButton');
 const closeBtnForm = document.getElementById('closeButton');
 
 
-buyBtns.forEach(function(buyBtn) {
-  buyBtn.addEventListener('click', function() { 
+buyBtns.forEach(function (buyBtn) {
+  buyBtn.addEventListener('click', function () {
     overlay.classList.add('show');
   });
 });
 
-buyBtnForm.addEventListener('click', () => {alert('Покупка совершена!')})
+buyBtnForm.addEventListener('click', () => { alert('Покупка совершена!') })
 
 closeBtnForm.addEventListener('click', () => {
-   overlay.classList.remove('show');
-   clearForm();
+  overlay.classList.remove('show');
+  clearForm();
 })
 
 const form = document.getElementById('purchaseForm');
@@ -100,8 +100,8 @@ form.addEventListener('submit', (e) => {
 const toggleThemeBtn = document.querySelector('.toggle-theme');
 const style = document.getElementById('style');
 
-toggleThemeBtn.addEventListener('click', function() {
-    if (style.href.includes('light-theme.css')) {
+toggleThemeBtn.addEventListener('click', function () {
+  if (style.href.includes('light-theme.css')) {
     style.href = 'style/dark-theme.css';
   } else {
     style.href = 'style/light-theme.css';
